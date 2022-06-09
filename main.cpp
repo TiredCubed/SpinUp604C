@@ -7,6 +7,9 @@ Motor rf(10);
 Motor rb(20);
 IMU imu(15);
 
+//PID functions
+
+//Drive
 
 void powerDrive(double target){
 	
@@ -52,6 +55,8 @@ void powerDrive(double target){
 	}
 
 }
+
+//turn
 
 void powerTurn(double degree){
 	
@@ -158,9 +163,6 @@ void competition_initialize() {}
  */
 void autonomous() {
 	powerDrive(2000);
-	while(true){
-		screen::print(TEXT_SMALL, 3, "position: %f", lf.get_position());
-	}
 	powerTurn(90);
 	powerDrive(-1000);
 	powerTurn(45);
